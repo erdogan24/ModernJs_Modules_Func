@@ -20,4 +20,8 @@ const getLastPost = async function () {
   const data = await res.json();
 
   console.log(data);
+
+  return { title: data.at(-1).title, text: data.at(-1).body };
 };
+const lastPost = getLastPost();
+console.log(lastPost);
